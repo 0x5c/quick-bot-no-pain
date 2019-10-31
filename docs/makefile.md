@@ -22,18 +22,27 @@ $ make install BOTENV=customenv
 
 - `BOTENV`=`botenv`: Name of the venv to create/use.
 
-- `PY3DOT`=`7`: Defines the python3 executable to use. *Will be changed in future versions (Issue #1).*
-    > `PY3DOT=6` --> `python3.6`
+- `PYTHON_BIN`=`python3.7`: Defines the python executable to use.  
+    > A full path may be given.
 
-- `PIP_OUTPUT`=`q`: PIP verbosity option.
-    > `q` - Silent  
-    > `v` - Verbose *(more v's for more verbose)*  
-    > ~~*unset* - Normal PIP output~~ *Unavailable for now (Issue #2).*
+- `PIP_OUTPUT`=`-q`: PIP verbosity option.
+    > `-q` - Silent  
+    > `-v` - Verbose *(more v's for more verbose)*  
+    > *unset* - Normal PIP output
 
 
 ## Changelog
 
 ```none
+## [1.1.0] - 2019-10-31
+### Added
+- New environment variable to specify the python binary to use.
+### Changed
+- Changed `PIP_OUTPUT`; Added the ability to unsilence pip.
+- Changed some comments.
+- Fixed indentation [cosmetic].
+### Removed
+- No more "python minor version" environment variable.
 ## [1.0.0] - 2019-10-06
 ### Added
 - Initial release
