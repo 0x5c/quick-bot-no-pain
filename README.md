@@ -1,7 +1,7 @@
 # *Quick tools for painless Discord bots*
 *Don't let your bot development become `:coolcry:`*
 
-![Discord](https://img.shields.io/discord/591099017492955166?color=%237289DA&label=Discord)
+[![Discord](https://img.shields.io/discord/591099017492955166?color=%237289DA&label=Discord)](https://discordapp.com/invite/6reX7e)
 
 A collection of tools to aid in creating and using discord.py bots, painlessly.
 
