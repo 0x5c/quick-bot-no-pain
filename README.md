@@ -1,5 +1,5 @@
 # *Quick tools for painless Discord bots*
-*Don't let your bot development become `:coolcry:`*
+*Don't let your bot development become* ![:coolcry:](./docs/coolcry.png)
 
 [![Discord](https://img.shields.io/discord/591099017492955166?color=%237289DA&label=Discord)](https://discordapp.com/invite/6reX7e)
 
@@ -14,10 +14,10 @@ A collection of tools to aid in creating and using discord.py bots, painlessly.
 
 - [`run.sh`](./docs/run.sh.md) ­ ­ Simple startup script that handles restarting/exiting the bot
 
-- [**Skeleton files**](./docs/skeleton.md) ­ ­ Minimal templates of important and often missed bot files
+- [Skeleton files](./docs/skeleton.md) ­ ­ Minimal templates of important and often missed bot files
 
 
-> **Windows** Usage of most of these on Windows is untested, but should not cause problems with mingw64, MSYS/2, and such.  
+> **Windows:** Usage of most of these on Windows is untested, but should not cause problems with mingw64, MSYS/2, and such.  
 > Well... *probably.*
 
 
@@ -43,4 +43,5 @@ This project is released under the MIT license.
 See `LICENSE` for the full license text.
 
 **Some parts** of this project are released under the terms of the Unlicense,  
-and are identified as such in their documentation file.
+and are identified as such in their documentation file.  
+See the relevant documentation files for the full license text.
