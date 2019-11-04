@@ -20,7 +20,7 @@ All of the skeleton files listed in this file are released under the terms of th
 
 ## Changelog
 
-```none
+```md
 ## [1.0.0] - 2019-10-06
 ### Added
 - Initial release

@@ -33,7 +33,7 @@ $ make install BOTENV=customenv
 
 ## Changelog
 
-```none
+```md
 ## [1.1.0] - 2019-10-31
 ### Added
 - New environment variable to specify the python binary to use.
@@ -43,6 +43,7 @@ $ make install BOTENV=customenv
 - Fixed indentation [cosmetic].
 ### Removed
 - No more "python minor version" environment variable.
+
 ## [1.0.0] - 2019-10-06
 ### Added
 - Initial release

@@ -34,7 +34,6 @@ $ run.sh [--pass-errors] [-- [bot arguments]]
 ## [1.1.0] - 2019-11-04
 ### Added
 - Argument passing
-
 ### Changed
 - No longer requires `bash`
 
