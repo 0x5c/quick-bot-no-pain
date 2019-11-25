@@ -11,9 +11,9 @@ All of the skeleton files listed in this file are released under the terms of th
 
 - `requirements.txt`: standard file for passing package dependencies to pip.
 
-- `templates/template_*`: templates of settings and token files, ready for the makefile.  
-    Put your default settings in `options` for quick setup via the makefile.
-    > In the bot, load those with `import`. ie: `import options`
+- `templates/template_*`: templates of settings and token files, ready for the Makefile.  
+    Put your default settings in `options` for quick setup via the Makefile.
+    > In the bot, load those by importing them. ie: `from data import options`
 
 - `.gitignore`: git ignore file, pre-configured for a basic bot.
 
@@ -21,6 +21,10 @@ All of the skeleton files listed in this file are released under the terms of th
 ## Changelog
 
 ```md
+## [2.0.0] - 2019-11-24
+### Changed
+- Modified to reflect the move of options/keys to "/data".
+
 ## [1.0.0] - 2019-10-06
 ### Added
 - Initial release

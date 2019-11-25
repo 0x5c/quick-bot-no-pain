@@ -1,5 +1,6 @@
 # Quick bot, No pain / `Makefile`
 
+Quickly setup a venv, pip requirements, and copy template files with a single command.
 
 ## Usage
 
@@ -34,6 +35,13 @@ $ make install BOTENV=customenv
 ## Changelog
 
 ```md
+## [2.0.0] - 2019-11-24
+### Added
+- Ensures that /data exists.
+### Changed
+- Copies templates to /data.
+- Templates directory structure changed.
+
 ## [1.1.0] - 2019-10-31
 ### Added
 - New environment variable to specify the python binary to use.

@@ -4,8 +4,8 @@
 # --- quick-bot-no-pain ---
 
 # Settings and keys
-options.py
-keys.py
+data/options.py
+data/keys.py
 
 # Virtual environments
 botenv/

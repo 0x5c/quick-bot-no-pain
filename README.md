@@ -1,5 +1,5 @@
 # *Quick tools for painless Discord bots*
-*Don't let your bot development become* ![:coolcry:](./docs/coolcry.png)
+*Don't let your bot development become that:* ![:coolcry:](./docs/coolcry.png)
 
 [![Discord](https://img.shields.io/discord/591099017492955166?color=%237289DA&label=Discord)](https://discordapp.com/invite/6reX7e)
 
@@ -23,7 +23,7 @@ A collection of tools to aid in creating and using discord.py bots, painlessly.
 
 ## Repository template
 
-To use this repository as a base for your new bot, just use the *Template* feature of GitHub:
+To use this repository as a base for your new bot, just use the *Template* feature of GitHub:  
 ![Github template button](./docs/github-templates.png)  
 Feel free to remove any file you do not wish to use.
 
@@ -32,6 +32,7 @@ Feel free to remove any file you do not wish to use.
 
 Changelogs for individual tools are in the tools' documentation files.
 
+- [2019-11-24] v2.0.0 - Stable snapshot - Moved option/keys to "./data".
 - [2019-10-06] Added `Makefile`, `run.sh`, and skeleton files
 
 
