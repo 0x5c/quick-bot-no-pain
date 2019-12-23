@@ -10,11 +10,13 @@ A collection of tools to aid in creating and using discord.py bots, painlessly.
 
 *Click on the tool names to skip to documentation:*
 
-- [`Makefile`](./docs/makefile.md) ­ ­ Setup script for venv and more
+- [Makefile](./docs/makefile.md) ­ ­ Setup script for venv and more
 
-- [`run.sh`](./docs/run.sh.md) ­ ­ Simple startup script that handles restarting/exiting the bot
+- [run.sh](./docs/run.sh.md) ­ ­ Simple startup script that handles restarting/exiting the bot
 
 - [Skeleton files](./docs/skeleton.md) ­ ­ Minimal templates of important and often missed bot files
+
+- [Docker files](./docs/docker.md) ­ ­ Docker-related files
 
 
 > **Windows:** Usage of most of these on Windows is untested, but should not cause problems with mingw64, MSYS/2, and such.  
@@ -24,7 +26,7 @@ A collection of tools to aid in creating and using discord.py bots, painlessly.
 ## Repository template
 
 To use this repository as a base for your new bot, just use the *Template* feature of GitHub:  
-![Github template button](./docs/github-templates.png)  
+![GitHub template button](./docs/github-templates.png)  
 Feel free to remove any file you do not wish to use.
 
 
@@ -32,8 +34,9 @@ Feel free to remove any file you do not wish to use.
 
 Changelogs for individual tools are in the tools' documentation files.
 
+- [2019-12-23] Added Docker files.
 - [2019-11-24] v2.0.0 - Stable snapshot - Moved option/keys to "./data".
-- [2019-10-06] Added `Makefile`, `run.sh`, and skeleton files
+- [2019-10-06] Added `Makefile`, `run.sh`, and skeleton files.
 
 
 ## License

@@ -1,14 +1,15 @@
-# Docker help for qrm2
+# Docker help for {{bot}}
 
-You have multiple ways to use docker to run an instance of qrm2
+You have multiple options to run an instance of {{bot}} using docker.
 
-- [Docker help for qrm2](#docker-help-for-qrm2)
-  - [Using docker-compose and the prebuilt-image (recommended)](#using-docker-compose-and-the-prebuilt-image-recommended)
+- [Docker help for {{bot}}](#docker-help-for-bot)
   - [Using docker-compose and building the image](#using-docker-compose-and-building-the-image)
   - [Using pure docker](#using-pure-docker)
     - [[Optional] Building the image](#optional-building-the-image)
     - [Creating the container](#creating-the-container)
 
+
+<!-- !! ONLY include this part if you provide a prebuilt image !!
 
 ## Using docker-compose and the prebuilt-image (recommended)
 
@@ -22,8 +23,8 @@ This is the easiest method for running the bot without any modifications.
     ```yaml
     version: '3'
     services:
-      qrm2:
-        image: "classabbyamp/discord-qrm2:latest"
+      {{bot}}:
+        image: "{{user}}/{{image}}:latest"
         restart: on-failure
         volumes:
           - "./data:/app/data:rw"
@@ -43,7 +44,7 @@ This is the easiest method for running the bot without any modifications.
     ```
 
     > Run without "-d" to test the bot. (run in foreground)
-
+-->
 
 
 ## Using docker-compose and building the image
@@ -57,9 +58,9 @@ This is the easiest method to run the bot with modifications.
     ```yaml
     version: '3'
     services:
-      qrm2:
+      {{bot}}:
         build: .
-        image: "discord-qrm2:local-latest"
+        image: "{{image}}:local-latest"
         restart: on-failure
         volumes:
           - "./data:/app/data:rw"
@@ -95,7 +96,7 @@ This methods is not very nice to use.
 2. Run docker build:
 
     ```none
-    $ docker build -t discord-qrm2:local-latest .
+    $ docker build -t {{image}}:local-latest .
     ```
 
 
@@ -106,9 +107,11 @@ This methods is not very nice to use.
 2. Run the container:
 
     ```none
-    $ docker run -d --rm --mount type=bind,src=$(pwd)/data,dst=/app/data --name qrm2 [image]
+    $ docker run -d --rm --mount type=bind,src=$(pwd)/data,dst=/app/data --name {{bot}} [image]
     ```
 
     Where `[image]` is either of:
-    - `discord-qrm2:local-latest` if you are building your own.
-    - `classabbyamp/discord-qrm2:latest` if you want to use the prebuilt image.
+    - `{{image}}:local-latest` if you are building your own.
+<!-- !! ONLY include this part if you provide a prebuilt image !!
+    - `{{user}}/{{image}}:latest` if you want to use the prebuilt image.
+-->

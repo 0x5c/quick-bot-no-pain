@@ -1,0 +1,16 @@
+/data/
+/templates/data/
+
+.github/
+.git/
+.gitignore
+
+/*env/
+
+.flake8
+
+docker-compose.y*ml
+
+Makefile
+
+README*.md

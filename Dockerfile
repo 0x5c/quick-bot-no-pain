@@ -1,3 +1,11 @@
+# A minimal Dockerfile for painless discord bots.
+# v1.0.0
+# Copyright (c) 2019 classabbyamp, 0x5c
+# Released under the terms of the MIT license.
+# Part of:
+# https://github.com/0x5c/quick-bot-no-pain
+
+
 FROM alpine:3.10
 
 COPY . /app
@@ -11,14 +19,11 @@ RUN \
         g++ \
         git \
         gcc \
-        libxml2-dev \
-        libxslt-dev \
         libressl-dev \
         python3-dev && \
     echo "**** install runtime packages ****" && \
     apk add --no-cache \
         libressl \
-        py3-lxml \
         py3-pip \
         python3 && \
     echo "**** install pip packages ****" && \
