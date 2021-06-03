@@ -21,6 +21,13 @@ All of the skeleton files listed in this file are released under the terms of th
 ## Changelog
 
 ```md
+## [Unreleased]
+### Added
+- Comments in template files.
+### Changed
+- Entirety of `data/` ignored.
+- Catch-all to ignore environments.
+
 ## [2.0.0] - 2019-11-24
 ### Changed
 - Modified to reflect the move of options/keys to "/data".

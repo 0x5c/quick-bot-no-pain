@@ -13,4 +13,5 @@ API keys and tokens for the bot.
 ---
 """
 
+# The token to authenticate the bot with discord
 discord_token = ""

@@ -13,4 +13,5 @@ Settings and options for the bot.
 ---
 """
 
+# The prefix for the bot. Define a list of strings for multiple prefixes. ie: `["?", "!", "pls "]`
 command_prefix = "?"
