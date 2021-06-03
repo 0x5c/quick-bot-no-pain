@@ -4,13 +4,10 @@
 # --- quick-bot-no-pain ---
 
 # Settings and keys
-data/options.py
-data/keys.py
+data/
 
 # Virtual environments
-botenv/
-venv/
-env/
+*env/
 
 # Editors & IDEs
 .vscode/
