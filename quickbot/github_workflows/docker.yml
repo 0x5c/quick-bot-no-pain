@@ -1,0 +1,66 @@
+# vim: ts=2 sw=2:
+
+name: Docker Build and Deploy
+
+on:
+  push:
+    # Publish `master` as Docker `dev` image.
+    branches:
+      - master
+    # Publish `v*` tags as x.x.x images and as `latest`.
+    tags:
+      - v*
+
+jobs:
+  docker:
+    name: Build and push docker images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Write ref to file
+        run: git rev-list -n 1 $GITHUB_REF > ./git_commit
+
+      - name: Build image
+        id: build_image
+        run: |
+          IMAGE_NAME=${GITHUB_REPOSITORY#*/}
+          echo ::set-output name=image_name::$IMAGE_NAME
+          docker build . --file Dockerfile -t $IMAGE_NAME
+
+      - name: Login to Github Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Tag image
+        id: tag_image
+        run: |
+          IMAGE_NAME=${{ steps.build_image.outputs.image_name }}
+          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+          echo IMAGE_ID=$IMAGE_ID
+          echo ::set-output name=image_id::$IMAGE_ID
+
+          # Strip git ref prefix from version
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+          # Strip "v" prefix from tag name
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+          # if version is master, set version to dev
+          [[ "$VERSION" == "master" ]] && VERSION=dev
+          echo VERSION=$VERSION
+          echo ::set-output name=version::$VERSION
+
+          # tag dev or x.x.x
+          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
+          # tag latest if not a dev release
+          [[ "$VERSION" != "dev" ]] && docker tag $IMAGE_NAME $IMAGE_ID:latest || true
+
+      - name: Push images to registry
+        run: |
+          [[ "${{ steps.tag_image.outputs.version }}" != "dev" ]] && docker push ${{ steps.tag_image.outputs.image_id }}:latest || true
+          docker push ${{ steps.tag_image.outputs.image_id }}:${{ steps.tag_image.outputs.version }}

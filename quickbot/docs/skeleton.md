@@ -23,10 +23,13 @@ All of the skeleton files listed in this file are released under the terms of th
 ```md
 ## [Unreleased]
 ### Added
-- Comments in template files.
+- Comments in keys/opts template files.
 ### Changed
+- Code formatting in keys/opts tempate files.
 - Entirety of `data/` ignored.
 - Catch-all to ignore environments.
+### Removed
+- Outdated instruction in keys/opts template files.
 
 ## [2.0.0] - 2019-11-24
 ### Changed

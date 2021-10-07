@@ -1,0 +1,17 @@
+# --- Custom ---
+
+
+# --- quick-bot-no-pain ---
+
+# Settings and keys
+data/
+
+# Virtual environments
+*env/
+
+# Editors & IDEs
+.vscode/
+*.code-workspace
+
+# Python cache files
+__pycache__/

@@ -7,7 +7,7 @@ Minimal dockerfile and instructions for using it, [almost] ready to ship.
 
 | File               | Description                                               |
 | ------------------ | --------------------------------------------------------- |
-| `Dockerfile`       | Minimal dockerfile for running your bot, uses `run.sh`. |
+| `Dockerfile`       | Minimal dockerfile for running your bot, uses `run.sh`.   |
 | `README-DOCKER.md` | Template for instructions to run your bot through docker. |
 | `.dockerignore`    | Docker ignore file.                                       |
 
@@ -30,12 +30,17 @@ The instructions are provided as a fairly complete template. Remove or uncomment
 
 The dockerignore file is to be expanded with any new file/directory that should not be included in the image.
 
-> The dockerignore file serves as a way to excludes files and directories from the image. While commonly omitted from projects, it is best practice and helps lowering the building time and image size.
+> The dockerignore file serves as a way to excludes files and directories from the image. While commonly omitted from projects, it is best practice and helps lower the building time and image size.
 
 
 ## Changelog
 
 ```md
+## [2.0.0] - 2021-06-28
+### Changed
+- Base image to voidlinux (glibc).
+- Clear comments for where additional runtime and build dependencies can be specified.
+
 ## [1.0.0] - 2019-12-23
 ### Added
 - Dokerfile

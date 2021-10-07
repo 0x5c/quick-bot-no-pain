@@ -1,0 +1,72 @@
+name: Bug Report
+description: Report a bug to help us improve this project
+labels: [bug, 'needs triage']
+body:
+- id: tool-name
+  type: dropdown
+    attributes:
+    label: Which tool is having that bug?
+    options:
+      - qbnp-bootstrap.py
+      - Makefile
+      - run.sh
+      - Docker files
+      - GitHub Workflows
+      - Skeleton files
+      - Conf file templates
+- id: description
+  type: textarea
+  attributes:
+    label: Bug description
+    description: A clear and concise description of what the bug is.
+    placeholder: There was a crash when...
+  validations:
+    required: true
+- id: steps
+  type: textarea
+  attributes:
+    label: Steps to reproduce
+    description: Clear steps to reproduce the bug.
+    placeholder: |
+      1. Do the thing
+      2. Do the other thing
+      3. ???
+      4. Crash :(
+  validations:
+    required: true
+- id: expected
+  type: textarea
+  attributes:
+    label: Expected behaviour
+    description: A clear and concise description of what you expected to happen.
+    placeholder: The app is supposed to show that thing.
+  validations:
+    required: true
+- id: tool-version
+  type: input
+  attributes:
+    label: What version of the tool are you using?
+    description: The version number (at the top of the file, or in the tool's docs), or the commit id.
+    placeholder: 1.2.0
+  validations:
+    required: true
+- id: environment
+  type: textarea
+  attributes:
+    label: Environment
+    description: If relevant, include list of software used and versions
+    placeholder: |
+      - Linux 5.8
+      - Docker 19.04
+      - zsh 5.8
+- id: logs
+  type: textarea
+  attributes:
+    label: Logs
+    description: If you have a log associated with the bug (tracebacks, etc), paste it directly here.
+    render: none
+- id: context
+  type: textarea
+  attributes:
+    label: Additional context, screenshots, etc
+    description: Add any other relevant context about the problem here.

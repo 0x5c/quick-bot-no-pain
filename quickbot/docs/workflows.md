@@ -1,0 +1,2 @@
+- generate and add CR_PAT secret
+- after first release, make pkg public if using ghcr

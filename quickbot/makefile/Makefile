@@ -1,6 +1,6 @@
 # A quick installation script for painless discord bots.
-# v2.0.0
-# Copyright (c) 2019 0x5c
+# v2.1.0
+# Copyright (c) 2021 0x5c, classabbyamp
 # Released under the terms of the MIT license.
 # Part of:
 # https://github.com/0x5c/quick-bot-no-pain
@@ -12,7 +12,7 @@
 # Those are the defaults; they can be over-ridden if specified
 # at en environment level or as 'make' arguments.
 BOTENV ?= botenv
-PYTHON_BIN ?= python3.7
+PYTHON_BIN ?= python3.9
 PIP_OUTPUT ?= -q
 
 
@@ -37,7 +37,7 @@ install: $(BOTENV)/req_done data/options.py data/keys.py
 # Virual environment setup
 $(BOTENV)/success:
 ifneq ("$(wildcard ./$(BOTENV).)",)
-	@echo "\033[94m--> Creating the virtual environment...\033[0m"
+	@echo "\033[94m--> Creating the virtual environment (PYTHON_BIN=$(PYTHON_BIN)) ...\033[0m"
 	@$(PYTHON_BIN) -m venv $(BOTENV)
 	@touch $(BOTENV)/success
 endif

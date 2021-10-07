@@ -35,6 +35,12 @@ $ make install BOTENV=customenv
 ## Changelog
 
 ```md
+## [Unreleased] 2.1.0
+### Added
+- Python command being used to the status message.
+### Changed
+- Bumped the default python command to `python3.9`.
+
 ## [2.0.0] - 2019-11-24
 ### Added
 - Ensures that /data exists.

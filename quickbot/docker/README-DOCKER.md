@@ -1,16 +1,17 @@
-# Docker help for {{bot}}
+# Docker help for {{ bot.name }}
 
-You have multiple options to run an instance of {{bot}} using docker.
+You have multiple options to run an instance of {{ bot.name }} using docker.
 
-- [Docker help for {{bot}}](#docker-help-for-bot)
-  - [Using docker-compose and building the image](#using-docker-compose-and-building-the-image)
-  - [Using pure docker](#using-pure-docker)
-    - [[Optional] Building the image](#optional-building-the-image)
-    - [Creating the container](#creating-the-container)
+{% if docker.prebuilt %}
+- [Using docker-compose and the prebuilt-image (recommended)](#using-docker-compose-and-the-prebuilt-image-recommended)
+{% endif %}
+- [Using docker-compose and building the image](#using-docker-compose-and-building-the-image)
+- [Using pure docker](#using-pure-docker)
+  - [[Optional] Building the image](#optional-building-the-image)
+  - [Creating the container](#creating-the-container)
 
 
-<!-- !! ONLY include this part if you provide a prebuilt image !!
-
+{% if docker.prebuilt %}
 ## Using docker-compose and the prebuilt-image (recommended)
 
 This is the easiest method for running the bot without any modifications.  
@@ -23,8 +24,8 @@ This is the easiest method for running the bot without any modifications.
     ```yaml
     version: '3'
     services:
-      {{bot}}:
-        image: "{{user}}/{{image}}:latest"
+      {{ bot }}:
+        image: "{% if docker.registry %}{{ docker.registry }}/{% endif %}{{ docker.user }}/{{ docker.image }}:latest"
         restart: on-failure
         volumes:
           - "./data:/app/data:rw"
@@ -43,10 +44,10 @@ This is the easiest method for running the bot without any modifications.
     $ docker-compose up -d
     ```
 
-    > Run without "-d" to test the bot. (run in foreground)
--->
+    > Run without `-d` to test the bot. (run in foreground)
 
 
+{% endif %}
 ## Using docker-compose and building the image
 
 This is the easiest method to run the bot with modifications.
@@ -58,9 +59,9 @@ This is the easiest method to run the bot with modifications.
     ```yaml
     version: '3'
     services:
-      {{bot}}:
+      {{ bot }}:
         build: .
-        image: "{{image}}:local-latest"
+        image: "{{ docker.image }}:local-latest"
         restart: on-failure
         volumes:
           - "./data:/app/data:rw"
@@ -79,7 +80,7 @@ This is the easiest method to run the bot with modifications.
     $ docker-compose -d
     ```
 
-    > Run without "-d" to test the bot. (run in foreground)
+    > Run without `-d` to test the bot. (run in foreground).
 
 
 
@@ -96,7 +97,7 @@ This methods is not very nice to use.
 2. Run docker build:
 
     ```none
-    $ docker build -t {{image}}:local-latest .
+    $ docker build -t {{ docker.image }}:local-latest .
     ```
 
 
@@ -107,11 +108,11 @@ This methods is not very nice to use.
 2. Run the container:
 
     ```none
-    $ docker run -d --rm --mount type=bind,src=$(pwd)/data,dst=/app/data --name {{bot}} [image]
+    $ docker run -d --rm --mount type=bind,src=$(pwd)/data,dst=/app/data --name {{ bot }} [image]
     ```
 
     Where `[image]` is either of:
-    - `{{image}}:local-latest` if you are building your own.
-<!-- !! ONLY include this part if you provide a prebuilt image !!
-    - `{{user}}/{{image}}:latest` if you want to use the prebuilt image.
--->
+    - `{{ docker.image }}:local-latest` if you are building your own.
+{% if docker.prebuilt %}
+    - `{% if docker.registry %}{{ docker.registry }}/{% endif %}{{ docker.user }}/{{ docker.image }}:latest` if you want to use the prebuilt image.
+{% endif %}

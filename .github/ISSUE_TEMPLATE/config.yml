@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Feature Request
+    url: https://github.com/0x5c/quick-bot-no-pain/discussions/new?category=ideas-feature-requests
+    about: Suggest an idea for this project
+  - name: Support
+    url: https://github.com/0x5c/quick-bot-no-pain/discussions/new?category=support
+    about: Get help with quick-bot-no-pain in GitHub Discussions
+  - name: Support (Discord)
+    url: https://discord.gg/Wq8vpm3
+    about: Get help with quick-bot-no-pain on Discord
